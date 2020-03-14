@@ -1,11 +1,8 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin('~/.config/nvim/bundle/Vundle')
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -34,11 +31,26 @@ Plugin 'NLKNguyen/papercolor-theme'
 " editor config
 Plugin 'editorconfig/editorconfig-vim'
 
-" All of your Plugins must be added before the following line
+" light line
+Plugin 'itchyny/lightline.vim'
+
+" multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+
+" surround
+Plugin 'tpope/vim-surround'
+
+" gitgutter
+Plugin 'airblade/vim-gitgutter'
+
+" commenter
+Plugin 'preservim/nerdcommenter'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-"{{{ set var
+
+"{{{ set
 
 " leader
 let mapleader=','
@@ -53,13 +65,22 @@ set expandtab
 " highlight
 set cursorline
 
+" font
+set guifont=Menlo\ Regular:h12
+
+" gui options
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+
 "}}}
+
 
 "{{{ plugin config
 
 " indentLint
-" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLint_char='|'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " color theme
 set background=dark
@@ -68,5 +89,17 @@ colorscheme PaperColor
 " nerdtree
 nnoremap <leader>nf <ESC>:NERDTreeFind<CR>
 nnoremap <leader>b  <ESC>:NERDTreeToggle<CR>
+
+" light line
+let g:lightline = {
+    \ 'colorsheme': 'PaperColor',
+    \ }
+
+" commenter
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDToggleCheckAllLines = 1
 
 "}}}
