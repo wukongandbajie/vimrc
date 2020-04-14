@@ -13,6 +13,9 @@ Plugin 'Yggdroot/indentLine'
 " javascript syntax highlighting and improved indentation
 Plugin 'pangloss/vim-javascript'
 
+" jsx typescript
+Plugin 'peitalin/vim-jsx-typescript'
+
 " typescript syntax highlighting
 Plugin 'leafgarland/typescript-vim'
 
@@ -27,6 +30,7 @@ Plugin 'preservim/nerdtree'
 
 " color theme
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'liuchengxu/space-vim-dark'
 
 " editor config
 Plugin 'editorconfig/editorconfig-vim'
@@ -66,7 +70,7 @@ set expandtab
 set cursorline
 
 " font
-set guifont=Menlo\ Regular:h12
+" set guifont=Menlo\ Regular:h12
 
 " gui options
 set guioptions-=m
@@ -84,7 +88,9 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " color theme
 set background=dark
-colorscheme PaperColor
+set termguicolors
+" colorscheme PaperColor
+colorscheme space-vim-dark
 
 " nerdtree
 nnoremap <leader>nf <ESC>:NERDTreeFind<CR>
@@ -95,6 +101,10 @@ let g:lightline = {
     \ 'colorsheme': 'PaperColor',
     \ }
 
+" typescript vim
+let g:typescript_indent_disable = 1
+let g:typescript_compiler_binary = 'tsc'
+
 " commenter
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
@@ -103,3 +113,4 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDToggleCheckAllLines = 1
 
 "}}}
+
