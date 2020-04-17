@@ -50,6 +50,9 @@ Plugin 'airblade/vim-gitgutter'
 " commenter
 Plugin 'preservim/nerdcommenter'
 
+" json
+Plugin 'elzr/vim-json'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -58,6 +61,8 @@ filetype plugin indent on    " required
 
 " leader
 let mapleader=','
+
+set backupcopy=yes
 
 set nu
 set textwidth=120
@@ -84,7 +89,7 @@ set guioptions-=L
 "{{{ plugin config
 
 " indentLint
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " color theme
 set background=dark
@@ -104,6 +109,9 @@ let g:lightline = {
 " typescript vim
 let g:typescript_indent_disable = 1
 let g:typescript_compiler_binary = 'tsc'
+
+" vim json
+let g:vim_json_syntax_conceal = 0
 
 " commenter
 let g:NERDSpaceDelims = 1
